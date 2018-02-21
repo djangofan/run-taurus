@@ -6,6 +6,7 @@
 
 # if you correctly set XDisplay , and enable jmeter GUI in .yml,  then you will see both Jmeter
 #  start on your local machine and also a browser pointing to the test report.
+# once jmeter GUI starts up, you have to execute the RUN button manually
 
 ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 xhost + $ip
