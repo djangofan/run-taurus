@@ -1,0 +1,22 @@
+---
+scenarios:
+  testit-jmx:
+    script: testit.jmx
+
+execution:
+- scenario: testit-jmx
+  concurrency: 50
+  ramp-up: 30s
+
+reporting:
+- module: blazemeter
+- module: final-stats
+- module: passfail
+  criteria:
+  - avg-rt>5000ms for 5s, stop as failed
+- module: junit-xml
+  data-source: pass-fail
+
+modules:
+  jmeter:
+    gui: false
