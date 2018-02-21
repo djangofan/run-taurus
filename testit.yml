@@ -11,6 +11,7 @@ execution:
 reporting:
 - module: blazemeter
 - module: final-stats
+- module: console
 - module: passfail
   criteria:
   - avg-rt>5000ms for 5s, stop as failed
