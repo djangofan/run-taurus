@@ -20,4 +20,4 @@ reporting:
 
 modules:
   jmeter:
-    gui: false
+    gui: true
