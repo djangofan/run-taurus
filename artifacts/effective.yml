@@ -1,0 +1,280 @@
+---
+cli:
+  linter:
+    disable: false
+    ignored-warnings: []
+    lint-and-exit: false
+    warn-on-unfamiliar-fields: false
+cli-aliases:
+  cloud:
+    provisioning: cloud
+  detach:
+    modules:
+      cloud:
+        detach: true
+  func:
+    modules:
+      console:
+        disable: true
+    settings:
+      aggregator: functional-consolidator
+  gui:
+    modules:
+      jmeter:
+        gui: true
+  install-tools:
+    services:
+    - install-checker
+  lint:
+    cli:
+      linter:
+        lint-and-exit: true
+  local:
+    provisioning: local
+  locations:
+    modules:
+      cloud:
+        dump-locations: true
+    provisioning: cloud
+  nolint:
+    cli:
+      linter:
+        disable: true
+  public:
+    modules:
+      blazemeter:
+        public-report: true
+  report:
+    reporting:
+    - blazemeter
+  sequential:
+    modules:
+      local:
+        sequential: true
+execution:
+- concurrency:
+    local: 20
+  delay: 0
+  distributed: []
+  executor: jmeter
+  files: []
+  hold-for: 0
+  iterations: null
+  ramp-up: 30s
+  scenario: testit-jmx
+  start-at: 0
+  steps: null
+  throughput:
+    local: null
+  write-xml-jtl: error
+included-configs: []
+install-id: Docker
+modules:
+  ab:
+    class: bzt.modules.ab.ApacheBenchmarkExecutor
+  android-emulator:
+    class: bzt.modules.services.AndroidEmulatorLoader
+  apiritif:
+    class: bzt.modules.python.ApiritifNoseExecutor
+  appium:
+    class: bzt.modules.services.AppiumLoader
+  blazemeter:
+    address: https://a.blazemeter.com
+    browser-open: start
+    class: bzt.modules.blazemeter.BlazeMeterUploader
+    data-address: https://data.blazemeter.com
+    monitoring-buffer-limit: 500
+    public-report: false
+    report-name: null
+    report-times-multiplier: 1000
+    request-logging-limit: 256
+    send-interval: 30
+    send-monitoring: true
+    timeout: 30
+    token: ''
+  capturehar:
+    class: bzt.modules.blazemeter.ServiceStubCaptureHAR
+  cloud:
+    class: bzt.modules.blazemeter.CloudProvisioning
+    default-location: us-central1-a
+  console:
+    class: bzt.modules.console.ConsoleStatusReporter
+    disable: auto
+    screen: console
+  consolidator:
+    buffer-multiplier: 2
+    buffer-scale-choice: 0.5
+    class: bzt.modules.aggregator.ConsolidatingAggregator
+    generalize-labels: false
+    ignore-labels:
+    - ignore
+    max-buffer-len: 2h
+    min-buffer-len: 2s
+    percentiles:
+    - 0.0
+    - 50.0
+    - 90.0
+    - 95.0
+    - 99.0
+    - 99.9
+    - 100.0
+    rtimes-len: 500
+  final-stats:
+    class: bzt.modules.reporting.FinalStatus
+  final_stats:
+    class: bzt.modules.reporting.FinalStatus
+  functional-consolidator:
+    class: bzt.modules.functional.FunctionalAggregator
+  gatling:
+    class: bzt.modules.gatling.GatlingExecutor
+    properties:
+      gatling.data.file.bufferSize: 256
+  grinder:
+    class: bzt.modules.grinder.GrinderExecutor
+    properties:
+      grinder.useConsole: false
+  install-checker:
+    class: bzt.modules.services.InstallChecker
+  jmeter:
+    class: bzt.modules.jmeter.JMeterExecutor
+    detect-plugins: true
+    download-link: null
+    force-ctg: true
+    gui: false
+    memory-xmx: null
+    path: /root/.bzt/jmeter-taurus/3.3/bin/jmeter.sh
+    plugins:
+    - jpgc-casutg
+    - jpgc-dummy
+    - jpgc-ffw
+    - jpgc-fifo
+    - jpgc-functions
+    - jpgc-json
+    - jpgc-perfmon
+    - jpgc-prmctl
+    - jpgc-tst
+    properties:
+      jmeter.save.saveservice.autoflush: 'true'
+      jmeter.save.saveservice.connect_time: 'true'
+      jmeterengine.force.system.exit: 'true'
+      summariser.name: ''
+    shutdown-port: 4445
+    shutdown-wait: 5
+    system-properties: {}
+    version: '3.3'
+    xml-jtl-flags: {}
+  junit:
+    class: bzt.modules.java.JUnitTester
+  junit-xml:
+    class: bzt.modules.reporting.JUnitXMLReporter
+  local:
+    class: bzt.modules.provisioning.Local
+    sequential: false
+  locust:
+    class: bzt.modules.locustio.LocustIOExecutor
+  mocha:
+    class: bzt.modules.javascript.MochaTester
+  molotov:
+    class: bzt.modules.molotov.MolotovExecutor
+  monitoring:
+    class: bzt.modules.monitoring.Monitoring
+  newman:
+    class: bzt.modules.javascript.NewmanExecutor
+  nose:
+    class: bzt.modules.python.ApiritifNoseExecutor
+  nunit:
+    class: bzt.modules.csharp.NUnitExecutor
+  passfail:
+    class: bzt.modules.passfail.PassFailStatus
+  pbench:
+    class: bzt.modules.pbench.PBenchExecutor
+    enhanced: true
+  proxy2jmx:
+    class: bzt.modules.proxy2jmx.Proxy2JMX
+  pytest:
+    class: bzt.modules.python.PyTestExecutor
+  robot:
+    class: bzt.modules.python.RobotExecutor
+  rspec:
+    class: bzt.modules.ruby.RSpecTester
+  screenshoter:
+    class: bzt.modules.blazemeter.ServiceStubScreenshoter
+  selenium:
+    class: bzt.modules.selenium.SeleniumExecutor
+  shellexec:
+    class: bzt.modules.shellexec.ShellExecutor
+    env:
+      TAURUS_INDEX_ALL: ''
+  siege:
+    class: bzt.modules.siege.SiegeExecutor
+  testng:
+    class: bzt.modules.java.TestNGTester
+  tsung:
+    class: bzt.modules.tsung.TsungExecutor
+  unpacker:
+    class: bzt.modules.services.Unpacker
+  virtual-display:
+    class: bzt.modules.services.VirtualDisplay
+  wdio:
+    class: bzt.modules.javascript.WebdriverIOExecutor
+provisioning: local
+reporting:
+- dump-csv: null
+  dump-xml: null
+  failed-labels: false
+  module: final-stats
+  percentiles: true
+  summary: true
+  test-duration: true
+- module: console
+- forced-last-check: 1519267266.817869
+  module: blazemeter
+  report-name: null
+  session-id: null
+  test: null
+- dump-csv: final-stats.csv
+  dump-xml: null
+  failed-labels: false
+  module: final-stats
+  percentiles: true
+  summary: true
+  test-duration: true
+- module: console
+- data-source: sample-labels
+  filename: /tmp/artifacts/xunit.xml
+  module: junit-xml
+scenarios:
+  testit-jmx:
+    disable-listeners: true
+    force-parent-sample: true
+    headers: {}
+    modifications: {}
+    properties: {}
+    script: testit.jmx
+    variables: {}
+services:
+- local:
+  - label: null
+    metrics:
+    - cpu
+    - mem
+    - bytes-sent
+    - bytes-recv
+    - disk-read
+    - disk-write
+    - disk-space
+    - engine-loop
+    - conn-all
+  module: monitoring
+  run-at: local
+settings:
+  aggregator: consolidator
+  artifacts-dir: /tmp/artifacts
+  check-interval: 1
+  check-updates: true
+  default-executor: jmeter
+  proxy: {}
+  tab-replacement-spaces: 4
+  verbose: false
+version: 1.10.5
+

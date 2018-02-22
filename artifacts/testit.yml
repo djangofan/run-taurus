@@ -8,8 +8,8 @@ execution:
   concurrency: 20
   ramp-up: 30s
 
-reporting:  # https://github.com/Blazemeter/taurus/blob/master/site/dat/docs/Reporting.md
-- module: blazemeter  # will try to open web browser
+reporting:
+- module: blazemeter
 - module: final-stats
   dump-csv: final-stats.csv
 - module: console

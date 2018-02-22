@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<testsuites>
+  <testsuite name="sample_labels" package_name="bzt">
+    <testcase classname="https://a.blazemeter.com/app/?public-token=Vf9DfM0Go80jhA3wDSBNUDa18C5oreoul8ljNq7Yh2PmXMb3z0#reports/r-ext-5a8e2dc36d598/summary" name="Example Http Request 1">
+      <system-out>BlazeMeter report link: https://a.blazemeter.com/app/?public-token=Vf9DfM0Go80jhA3wDSBNUDa18C5oreoul8ljNq7Yh2PmXMb3z0#reports/r-ext-5a8e2dc36d598/summary
+</system-out>
+    </testcase>
+    <testcase classname="https://a.blazemeter.com/app/?public-token=Vf9DfM0Go80jhA3wDSBNUDa18C5oreoul8ljNq7Yh2PmXMb3z0#reports/r-ext-5a8e2dc36d598/summary" name="Example Http Request 2">
+      <system-out>BlazeMeter report link: https://a.blazemeter.com/app/?public-token=Vf9DfM0Go80jhA3wDSBNUDa18C5oreoul8ljNq7Yh2PmXMb3z0#reports/r-ext-5a8e2dc36d598/summary
+</system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

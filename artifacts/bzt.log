@@ -1,0 +1,263 @@
+[2018-02-22 02:40:54,899 INFO root] Taurus CLI Tool v1.10.5
+[2018-02-22 02:40:54,900 DEBUG root] Command-line options: {'verbose': None, 'no_system_configs': None, 'quiet': None, 'log': '/tmp/artifacts/bzt.log', 'option': None, 'aliases': []}
+[2018-02-22 02:40:54,901 DEBUG root] Python: CPython 2.7.12
+[2018-02-22 02:40:54,901 DEBUG root] OS: ('Linux', 'dc250794ee8e', '4.4.115-boot2docker', '#1 SMP Thu Feb 8 17:36:45 UTC 2018', 'x86_64', 'x86_64')
+[2018-02-22 02:40:54,901 INFO root] Starting with configs: ['testit.yml']
+[2018-02-22 02:40:54,902 DEBUG root] Using personal config: /root/.bzt-rc
+[2018-02-22 02:40:54,902 INFO Engine] Configuring...
+[2018-02-22 02:40:54,903 DEBUG Engine] Reading extension configs from: /etc/bzt.d
+[2018-02-22 02:40:54,903 DEBUG Engine] Base configs list: ['/usr/local/lib/python2.7/dist-packages/bzt/resources/base-config.yml', '/etc/bzt.d/50-pbench-enhanced.json', '/etc/bzt.d/90-artifacts-dir.json', '/etc/bzt.d/99-zinstallID.json']
+[2018-02-22 02:40:54,903 DEBUG Engine.Configuration] Configs: ['/usr/local/lib/python2.7/dist-packages/bzt/resources/base-config.yml', '/etc/bzt.d/50-pbench-enhanced.json', '/etc/bzt.d/90-artifacts-dir.json', '/etc/bzt.d/99-zinstallID.json']
+[2018-02-22 02:40:54,904 DEBUG Engine.Configuration] Reading /usr/local/lib/python2.7/dist-packages/bzt/resources/base-config.yml as YAML
+[2018-02-22 02:40:54,924 DEBUG Engine.Configuration] Reading /etc/bzt.d/50-pbench-enhanced.json as YAML
+[2018-02-22 02:40:54,925 DEBUG Engine.Configuration] Reading /etc/bzt.d/90-artifacts-dir.json as YAML
+[2018-02-22 02:40:54,925 DEBUG Engine.Configuration] Reading /etc/bzt.d/99-zinstallID.json as YAML
+[2018-02-22 02:40:54,926 DEBUG Engine] User configs list: ['/root/.bzt-rc', 'testit.yml']
+[2018-02-22 02:40:54,926 DEBUG Engine.Configuration] Configs: ['/root/.bzt-rc', 'testit.yml']
+[2018-02-22 02:40:54,927 DEBUG Engine.Configuration] Reading /root/.bzt-rc as YAML
+[2018-02-22 02:40:54,931 DEBUG Engine.Configuration] Reading testit.yml as YAML
+[2018-02-22 02:40:54,935 DEBUG Engine.Configuration] Configs: ['/root/.bzt-rc', 'testit.yml']
+[2018-02-22 02:40:54,936 DEBUG Engine.Configuration] Reading /root/.bzt-rc as YAML
+[2018-02-22 02:40:54,940 DEBUG Engine.Configuration] Reading testit.yml as YAML
+[2018-02-22 02:40:54,945 DEBUG Engine] Requesting updates info: http://gettaurus.org/updates/?version=1.10.5&installID=Docker
+[2018-02-22 02:40:54,945 INFO Engine] Artifacts dir: /tmp/artifacts
+[2018-02-22 02:40:54,948 DEBUG Engine] New artifact filename: /tmp/artifacts/effective
+[2018-02-22 02:40:54,951 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-02-22 02:40:54,970 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-02-22 02:40:54,971 DEBUG Engine] New artifact filename: /tmp/artifacts/merged.yml
+[2018-02-22 02:40:54,972 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/merged.yml
+[2018-02-22 02:40:54,976 DEBUG Engine] New artifact filename: /tmp/artifacts/merged.json
+[2018-02-22 02:40:54,977 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/merged.json
+[2018-02-22 02:40:54,978 DEBUG Engine] Add existing artifact (move=False): testit.yml
+[2018-02-22 02:40:54,978 DEBUG Engine] Copying testit.yml to /tmp/artifacts/testit.yml
+[2018-02-22 02:40:54,982 DEBUG root] Closing log handler: /tmp/artifacts/bzt.log
+[2018-02-22 02:40:54,983 DEBUG root] Switched writing logs to /tmp/artifacts/bzt.log
+[2018-02-22 02:40:54,983 DEBUG root] Linting config
+[2018-02-22 02:40:54,985 INFO Engine] Preparing...
+[2018-02-22 02:40:54,986 DEBUG Engine] Module config: consolidator defaultdict(None, {'max-buffer-len': '2h', 'buffer-multiplier': 2, 'ignore-labels': ['ignore'], 'min-buffer-len': '2s', 'percentiles': [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0], 'rtimes-len': 500, 'buffer-scale-choice': 0.5, 'generalize-labels': False, 'class': 'bzt.modules.aggregator.ConsolidatingAggregator'})
+[2018-02-22 02:40:54,986 DEBUG root] Importing module: bzt.modules.aggregator
+[2018-02-22 02:40:54,996 DEBUG root] Loading class: 'ConsolidatingAggregator' from <module 'bzt.modules.aggregator' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/aggregator.pyc'>
+[2018-02-22 02:40:54,996 DEBUG Engine.consolidator] Buffer scaling setup: percentile 95.0 from [0.0, 50.0, 90.0, 95.0, 99.0, 99.9, 100.0] selected
+[2018-02-22 02:40:54,997 DEBUG Engine] Module config: monitoring defaultdict(None, {'class': 'bzt.modules.monitoring.Monitoring'})
+[2018-02-22 02:40:54,997 DEBUG root] Importing module: bzt.modules.monitoring
+[2018-02-22 02:40:54,998 DEBUG root] Loading class: 'Monitoring' from <module 'bzt.modules.monitoring' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/monitoring.pyc'>
+[2018-02-22 02:40:54,998 DEBUG Engine] Module config: local defaultdict(None, {'class': 'bzt.modules.provisioning.Local'})
+[2018-02-22 02:40:54,999 DEBUG root] Importing module: bzt.modules.provisioning
+[2018-02-22 02:40:54,999 DEBUG root] Loading class: 'Local' from <module 'bzt.modules.provisioning' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/provisioning.pyc'>
+[2018-02-22 02:40:54,999 DEBUG Engine] Module config: jmeter defaultdict(None, {'gui': False, 'properties': defaultdict(None, {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'summariser.name': '', 'jmeterengine.force.system.exit': 'true'}), 'class': 'bzt.modules.jmeter.JMeterExecutor', 'plugins': ['jpgc-casutg', 'jpgc-dummy', 'jpgc-ffw', 'jpgc-fifo', 'jpgc-functions', 'jpgc-json', 'jpgc-perfmon', 'jpgc-prmctl', 'jpgc-tst']})
+[2018-02-22 02:40:55,000 DEBUG root] Importing module: bzt.modules.jmeter
+[2018-02-22 02:40:55,006 DEBUG root] Loading class: 'JMeterExecutor' from <module 'bzt.modules.jmeter' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/jmeter.pyc'>
+[2018-02-22 02:40:55,007 DEBUG Engine.local] Preparing executor: jmeter/139824058548048
+[2018-02-22 02:40:55,009 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter.log
+[2018-02-22 02:40:55,009 DEBUG Engine.jmeter] Checking if port 4445 is free
+[2018-02-22 02:40:55,009 DEBUG Engine.jmeter] Port 4445 is free
+[2018-02-22 02:40:55,009 DEBUG Engine.jmeter] Using port 4445 for management
+[2018-02-22 02:40:55,010 DEBUG Engine.jmeter.JavaVM] Trying JavaVM: ['java', '-version']
+[2018-02-22 02:40:55,058 DEBUG Engine.jmeter.JavaVM] JavaVM output: openjdk version "1.8.0_151"
+OpenJDK Runtime Environment (build 1.8.0_151-8u151-b12-0ubuntu0.16.04.2-b12)
+OpenJDK 64-Bit Server VM (build 25.151-b12, mixed mode)
+
+[2018-02-22 02:40:55,058 DEBUG Engine.jmeter.TclLibrary] We don't need to check tcl library on this platform
+[2018-02-22 02:40:55,059 DEBUG Engine.jmeter.JMeter] Trying jmeter: /root/.bzt/jmeter-taurus/3.3/bin/jmeter.sh
+[2018-02-22 02:40:55,061 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/3.3/bin/jmeter.sh', '-j', '/tmp/jmetercAEp82log', '--version'] at .
+[2018-02-22 02:40:55,596 DEBUG Engine] Taurus updates info: {"latest":"1.10.5","needsUpgrade":false}
+[2018-02-22 02:40:55,597 DEBUG Engine] Installation is up-to-date
+[2018-02-22 02:40:56,319 DEBUG Engine.jmeter.JMeter] JMeter check:     _    ____   _    ____ _   _ _____       _ __  __ _____ _____ _____ ____     
+   / \  |  _ \ / \  / ___| | | | ____|     | |  \/  | ____|_   _| ____|  _ \   
+  / _ \ | |_) / _ \| |   | |_| |  _|    _  | | |\/| |  _|   | | |  _| | |_) | 
+ / ___ \|  __/ ___ \ |___|  _  | |___  | |_| | |  | | |___  | | | |___|  _ <  
+/_/   \_\_| /_/   \_\____|_| |_|_____|  \___/|_|  |_|_____| |_| |_____|_| \_\ 3.3 r1808647  
+
+Copyright (c) 1999-2017 The Apache Software Foundation
+
+ / None
+[2018-02-22 02:40:56,320 DEBUG Engine.jmeter] Load: LoadSpec(concurrency=20, throughput=None, ramp_up=30.0, hold=0, iterations=0, duration=30.0, steps=None)
+[2018-02-22 02:40:56,327 DEBUG Engine] New artifact filename: /tmp/artifacts/kpi.jtl
+[2018-02-22 02:40:56,328 DEBUG Engine] New artifact filename: /tmp/artifacts/error.jtl
+[2018-02-22 02:40:56,329 DEBUG Engine.jmeter] Enforcing parent sample for transaction controller
+[2018-02-22 02:40:56,331 WARNING Engine.jmeter.LoadSettingsProcessor.ThreadGroupHandler.ThreadGroup] Parsing concurrency '${THREADS}' in group 'ThreadGroup' failed, choose 1
+[2018-02-22 02:40:56,332 DEBUG Engine.jmeter.LoadSettingsProcessor.ThreadGroupHandler] Converting ThreadGroup (Example Thread Group (Stop Thread On Error)) to ConcurrencyThreadGroup and apply load parameters
+[2018-02-22 02:40:56,332 DEBUG JMX] Saving JMX to: /bzt-configs/modified_testit.jmx
+[2018-02-22 02:40:56,334 DEBUG Engine.jmeter] Additional properties: defaultdict(None, {'jmeter.save.saveservice.autoflush': 'true', 'jmeter.save.saveservice.connect_time': 'true', 'user.classpath': '/tmp/artifacts:/bzt-configs', 'sampleresult.default.encoding': 'UTF-8', 'summariser.name': '', 'jmeterengine.force.system.exit': 'true', 'jmeter.save.saveservice.timestamp_format': 'ms', 'jmeterengine.nongui.maxport': 4445, 'jmeterengine.nongui.port': 4445})
+[2018-02-22 02:40:56,334 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter-bzt.properties
+[2018-02-22 02:40:56,336 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/3.3/bin/PluginsManagerCMD.sh', 'install-for-jmx', '/bzt-configs/modified_testit.jmx'] at .
+[2018-02-22 02:41:01,754 DEBUG Engine.jmeter.JMeter] Try to detect plugins for /bzt-configs/modified_testit.jmx
+02:41:01.285 [main] INFO  org.jmeterplugins.repository.PluginManager - Plugins Status: [jpgc-functions=2.0, jpgc-casutg=2.5, jpgc-dummy=0.2, jpgc-ffw=2.0, jpgc-fifo=0.2, jpgc-json=2.6, jpgc-prmctl=0.3, jpgc-perfmon=2.1, jpgc-plugins-manager=0.18, jpgc-tst=2.1, jmeter-core=3.3, jmeter-ftp=3.3, jmeter-http=3.3, jmeter-jdbc=3.3, jmeter-jms=3.3, jmeter-junit=3.3, jmeter-java=3.3, jmeter-ldap=3.3, jmeter-mail=3.3, jmeter-mongodb=3.3, jmeter-native=3.3, jmeter-tcp=3.3, jmeter-components=3.3]
+2018-02-22 02:41:01,285 INFO o.j.r.PluginManager: Plugins Status: [jpgc-functions=2.0, jpgc-casutg=2.5, jpgc-dummy=0.2, jpgc-ffw=2.0, jpgc-fifo=0.2, jpgc-json=2.6, jpgc-prmctl=0.3, jpgc-perfmon=2.1, jpgc-plugins-manager=0.18, jpgc-tst=2.1, jmeter-core=3.3, jmeter-ftp=3.3, jmeter-http=3.3, jmeter-jdbc=3.3, jmeter-jms=3.3, jmeter-junit=3.3, jmeter-java=3.3, jmeter-ldap=3.3, jmeter-mail=3.3, jmeter-mongodb=3.3, jmeter-native=3.3, jmeter-tcp=3.3, jmeter-components=3.3]
+02:41:01.613 [main] INFO  org.apache.jmeter.save.SaveService - Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+2018-02-22 02:41:01,613 INFO o.a.j.s.SaveService: Testplan (JMX) version: 2.2. Testlog (JTL) version: 2.2
+02:41:01.621 [main] INFO  org.apache.jmeter.save.SaveService - Using SaveService properties file encoding UTF-8
+2018-02-22 02:41:01,621 INFO o.a.j.s.SaveService: Using SaveService properties file encoding UTF-8
+02:41:01.624 [main] INFO  org.apache.jmeter.save.SaveService - Using SaveService properties version 3.2
+2018-02-22 02:41:01,624 INFO o.a.j.s.SaveService: Using SaveService properties version 3.2
+02:41:01.715 [main] INFO  org.jmeterplugins.repository.PluginManager - Restarting JMeter...
+2018-02-22 02:41:01,715 INFO o.j.r.PluginManager: Restarting JMeter...
+02:41:01.719 [Thread-1] INFO  org.jmeterplugins.repository.PluginManager - Starting JMeter Plugins modifications
+2018-02-22 02:41:01,719 INFO o.j.r.PluginManager: Starting JMeter Plugins modifications
+
+ERROR StatusLogger No log4j2 configuration file found. Using default configuration: logging only errors to the console. Set system property 'org.apache.logging.log4j.simplelog.StatusLogger.level' to TRACE to show Log4j2 internal initialization logging.
+
+[2018-02-22 02:41:06,760 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter.out
+[2018-02-22 02:41:06,760 DEBUG Engine] New artifact filename: /tmp/artifacts/jmeter.err
+[2018-02-22 02:41:06,762 DEBUG Engine] Module config: final-stats defaultdict(None, {'class': 'bzt.modules.reporting.FinalStatus'})
+[2018-02-22 02:41:06,763 DEBUG root] Importing module: bzt.modules.reporting
+[2018-02-22 02:41:06,811 DEBUG easyprocess] version=0.2.3
+[2018-02-22 02:41:06,813 DEBUG pyvirtualdisplay] version=0.2.1
+[2018-02-22 02:41:06,815 DEBUG root] Loading class: 'FinalStatus' from <module 'bzt.modules.reporting' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/reporting.pyc'>
+[2018-02-22 02:41:06,815 DEBUG Engine] Module config: console defaultdict(None, {'class': 'bzt.modules.console.ConsoleStatusReporter'})
+[2018-02-22 02:41:06,816 DEBUG root] Importing module: bzt.modules.console
+[2018-02-22 02:41:06,816 DEBUG root] Loading class: 'ConsoleStatusReporter' from <module 'bzt.modules.console' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/console.pyc'>
+[2018-02-22 02:41:06,817 DEBUG Engine] Module config: blazemeter defaultdict(None, {'class': 'bzt.modules.blazemeter.BlazeMeterUploader'})
+[2018-02-22 02:41:06,817 DEBUG root] Importing module: bzt.modules.blazemeter
+[2018-02-22 02:41:06,817 DEBUG root] Loading class: 'BlazeMeterUploader' from <module 'bzt.modules.blazemeter' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/blazemeter.pyc'>
+[2018-02-22 02:41:06,818 WARNING Engine] Module 'console' can be only used once, will merge all new instances into single
+[2018-02-22 02:41:06,818 DEBUG Engine] Module config: junit-xml defaultdict(None, {'class': 'bzt.modules.reporting.JUnitXMLReporter'})
+[2018-02-22 02:41:06,819 DEBUG root] Importing module: bzt.modules.reporting
+[2018-02-22 02:41:06,819 DEBUG root] Loading class: 'JUnitXMLReporter' from <module 'bzt.modules.reporting' from '/usr/local/lib/python2.7/dist-packages/bzt/modules/reporting.pyc'>
+[2018-02-22 02:41:06,825 WARNING Engine.blazemeter] No BlazeMeter API key provided, will upload anonymously
+[2018-02-22 02:41:06,825 DEBUG User] Request: GET https://a.blazemeter.com/api/v4/web/version None
+[2018-02-22 02:41:06,827 DEBUG urllib3.connectionpool] Starting new HTTPS connection (1): a.blazemeter.com
+[2018-02-22 02:41:07,291 DEBUG urllib3.connectionpool] https://a.blazemeter.com:443 "GET /api/v4/web/version HTTP/1.1" 200 217
+[2018-02-22 02:41:07,293 DEBUG User] Response [200]: {
+    "api_version": 4,
+    "error": null,
+    "result": "packages_backendPackageBuild 10666 release/2018-02-07_88-no-cache-mandango B10666  Tue Feb 20 20:20:47 2018 +0200 59ed5e83f9c9372200b9752186532457e2eb10ea\n"
+}
+[2018-02-22 02:41:07,296 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-02-22 02:41:07,320 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-02-22 02:41:07,322 INFO Engine] Starting...
+[2018-02-22 02:41:07,322 DEBUG Engine] Startup <bzt.modules.monitoring.Monitoring object at 0x7f2b544904d0>
+[2018-02-22 02:41:07,323 DEBUG Engine] Startup <bzt.modules.aggregator.ConsolidatingAggregator object at 0x7f2b54490b50>
+[2018-02-22 02:41:07,323 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x7f2b52ebed50>
+[2018-02-22 02:41:07,323 DEBUG Engine] Startup <bzt.modules.console.ConsoleStatusReporter object at 0x7f2b52ef1b50>
+[2018-02-22 02:41:07,324 INFO Engine.console] Waiting for results...
+[2018-02-22 02:41:07,324 DEBUG Engine] Startup <bzt.modules.blazemeter.BlazeMeterUploader object at 0x7f2b52e82950>
+[2018-02-22 02:41:07,324 INFO Engine.blazemeter] Initiating data feeding...
+[2018-02-22 02:41:07,325 DEBUG User] Request: POST https://a.blazemeter.com/api/v4/sessions None
+[2018-02-22 02:41:07,584 DEBUG urllib3.connectionpool] https://a.blazemeter.com:443 "POST /api/v4/sessions HTTP/1.1" 201 2056
+[2018-02-22 02:41:07,585 DEBUG User] Response [201]: {
+    "api_version": 4,
+    "error": null,
+    "result": {
+        "session": {
+            "id": "r-ext-5a8e2dc36d598",
+            "name": "external",
+            "userId": 386483,
+            "publicToken": "Vf9DfM0Go80jhA3wDSBNUDa18C5oreoul8ljNq7Yh2PmX
+[2018-02-22 02:41:07,586 INFO Engine.blazemeter] Started data feeding: https://a.blazemeter.com/app/?public-token=Vf9DfM0Go80jhA3wDSBNUDa18C5oreoul8ljNq7Yh2PmXMb3z0#reports/r-ext-5a8e2dc36d598/summary
+[2018-02-22 02:41:08,228 DEBUG Engine] Startup <bzt.modules.reporting.FinalStatus object at 0x7f2b52d65f90>
+[2018-02-22 02:41:08,229 DEBUG Engine] Startup <bzt.modules.reporting.JUnitXMLReporter object at 0x7f2b52cfe090>
+[2018-02-22 02:41:08,230 DEBUG Engine] Startup <bzt.modules.provisioning.Local object at 0x7f2b54490d10>
+[2018-02-22 02:41:08,230 DEBUG Engine.local] Delay setup for jmeter/testit-jmx: 0(start-at) + 0(delay) = 0
+[2018-02-22 02:41:08,234 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-02-22 02:41:08,262 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-02-22 02:41:08,265 DEBUG root] Leveling down log file verbosity, use -v option to have DEBUG messages enabled
+[2018-02-22 02:41:08,265 DEBUG root] Leveled up log file verbosity
+[2018-02-22 02:41:08,265 DEBUG bzt.utils] Executing shell: ['/root/.bzt/jmeter-taurus/3.3/bin/jmeter.sh', '-n', '-t', '/bzt-configs/modified_testit.jmx', '-j', '/tmp/artifacts/jmeter.log', '-q', '/tmp/artifacts/jmeter-bzt.properties'] at /bzt-configs
+[2018-02-22 02:41:08,980 DEBUG root] Leveling down log file verbosity, use -v option to have DEBUG messages enabled
+[2018-02-22 02:41:09,199 INFO Engine.console] Waiting for finish...
+[2018-02-22 02:41:57,227 WARNING Engine] Please wait for graceful shutdown...
+[2018-02-22 02:41:57,232 DEBUG root] Leveled up log file verbosity
+[2018-02-22 02:41:57,233 INFO Engine] Shutting down...
+[2018-02-22 02:41:57,239 DEBUG Engine.local] Shutdown jmeter/testit-jmx
+[2018-02-22 02:41:57,239 DEBUG Engine.console] Restoring logging streams, [<logging.StreamHandler object at 0x7f2b544c2c90>]/{<logging.StreamHandler object at 0x7f2b544c2c90>: <open file '<stdout>', mode 'w' at 0x7f2b58a05150>}
+[2018-02-22 02:41:57,243 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-02-22 02:41:57,267 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-02-22 02:41:57,268 INFO Engine] Post-processing...
+[2018-02-22 02:41:57,269 DEBUG Engine.local] Post-process jmeter/testit-jmx
+[2018-02-22 02:41:57,269 DEBUG Engine] Add existing artifact (move=True): /bzt-configs/modified_testit.jmx
+[2018-02-22 02:41:57,269 DEBUG Engine] Moving /bzt-configs/modified_testit.jmx to /tmp/artifacts/modified_testit.jmx
+[2018-02-22 02:41:57,276 DEBUG Engine.jmeter.JTLErrorsReader.FileReader] Reading: /tmp/artifacts/error.jtl
+[2018-02-22 02:41:57,277 DEBUG Engine.jmeter.JTLReader.IncrementalCSVReader.FileReader] Reading: /tmp/artifacts/kpi.jtl
+[2018-02-22 02:41:57,277 DEBUG Engine.jmeter.JTLReader] Buffer len: 1
+[2018-02-22 02:41:57,277 DEBUG Engine.jmeter.JTLReader] Aggregating: 1519267316
+[2018-02-22 02:41:57,278 DEBUG Engine.consolidator] Consolidator buffer[2]: [1519267313, 1519267316]
+[2018-02-22 02:41:57,279 DEBUG Engine.consolidator] Merging into 1519267313
+[2018-02-22 02:41:57,279 DEBUG Engine.consolidator] Merging 1519267313
+[2018-02-22 02:41:57,281 DEBUG Engine.consolidator] Processed datapoint: 1519267313/None
+[2018-02-22 02:41:57,281 DEBUG Engine.consolidator] Merging into 1519267316
+[2018-02-22 02:41:57,282 DEBUG Engine.consolidator] Merging 1519267316
+[2018-02-22 02:41:57,283 DEBUG Engine.consolidator] Processed datapoint: 1519267316/None
+[2018-02-22 02:41:57,284 INFO Engine.final-stats] Test duration: 0:00:50
+[2018-02-22 02:41:57,284 INFO Engine.final-stats] Samples count: 74, 0.00% failures
+[2018-02-22 02:41:57,285 INFO Engine.final-stats] Average times: total 0.008, latency 0.007, connect 0.000
+[2018-02-22 02:41:57,285 INFO Engine.final-stats] Percentile 0.0%: 0.001
+[2018-02-22 02:41:57,286 INFO Engine.final-stats] Percentile 50.0%: 0.003
+[2018-02-22 02:41:57,286 INFO Engine.final-stats] Percentile 90.0%: 0.009
+[2018-02-22 02:41:57,287 INFO Engine.final-stats] Percentile 95.0%: 0.026
+[2018-02-22 02:41:57,287 INFO Engine.final-stats] Percentile 99.0%: 0.180
+[2018-02-22 02:41:57,288 INFO Engine.final-stats] Percentile 99.9%: 0.180
+[2018-02-22 02:41:57,288 INFO Engine.final-stats] Percentile 100.0%: 0.180
+[2018-02-22 02:41:57,289 DEBUG Engine.console] No logger_handler or orig_stream was detected
+[2018-02-22 02:41:57,289 DEBUG Engine.blazemeter] KPI bulk buffer len in post-proc: 16
+[2018-02-22 02:41:57,289 INFO Engine.blazemeter] Sending remaining KPI data to server...
+[2018-02-22 02:41:57,293 DEBUG User] Request: POST https://data.blazemeter.com/submit.php?session_id=r-ext-5a8e2dc36d598&signature=bf622bab98d6a4630bec0156d2c826be&test_id=5946857&user_id=386483&pq=0&target=labels_bulk&update=1 {
+ "sourceID": 139824051267920, 
+ "labels": [
+  {
+   "percentileHistogramBytes": [], 
+   "errors": [], 
+   "name": "ALL", 
+   "interval": 1, 
+   "otherErrorsCount": 0, 
+   "n": 74, 
+   "percentileHistogramLatency": [], 
+   "intervals": [
+    {
+     "by": {
+[2018-02-22 02:41:57,525 DEBUG urllib3.connectionpool] https://data.blazemeter.com:443 "POST /submit.php?session_id=r-ext-5a8e2dc36d598&signature=bf622bab98d6a4630bec0156d2c826be&test_id=5946857&user_id=386483&pq=0&target=labels_bulk&update=1 HTTP/1.1" 200 140
+[2018-02-22 02:41:57,526 DEBUG User] Response [200]: {"api_version":2,"error":null,"result":{"session":{"_id":"r-ext-5a8e2dc36d598","name":"external","statusCode":100,"status":"INITIALIZING"}}}
+[2018-02-22 02:41:57,530 DEBUG User] Request: POST https://data.blazemeter.com/api/v4/image/r-ext-5a8e2dc36d598/files?signature=bf622bab98d6a4630bec0156d2c826be --===============0867226911499221399==
+Content-Disposition: file; name="file"; filename="r-ext-5a8e2dc36d598-0-c.monitoring.json"
+Content-Type: application/json
+
+{
+ "kpis": {
+  "Connections": "Connections", 
+  "CPU": "CPU", 
+  "Network I/O": "Network I
+[2018-02-22 02:41:57,922 DEBUG urllib3.connectionpool] https://data.blazemeter.com:443 "POST /api/v4/image/r-ext-5a8e2dc36d598/files?signature=bf622bab98d6a4630bec0156d2c826be HTTP/1.1" 200 116
+[2018-02-22 02:41:57,924 DEBUG User] Response [200]: {
+    "api_version": 4,
+    "error": null,
+    "result": [
+        "r-ext-5a8e2dc36d598-0-c.monitoring.json"
+    ]
+}
+[2018-02-22 02:41:57,925 DEBUG Engine.blazemeter] Set last check time to: 1519267266.82
+[2018-02-22 02:41:57,925 INFO Engine.blazemeter] Ending data feeding...
+[2018-02-22 02:41:57,926 DEBUG User] Request: POST https://a.blazemeter.com/api/v4/sessions/r-ext-5a8e2dc36d598/terminate-external {
+ "sessionId": "r-ext-5a8e2dc36d598", 
+ "testId": 5946857, 
+ "signature": "bf622bab98d6a4630bec0156d2c826be"
+}
+[2018-02-22 02:41:58,320 DEBUG urllib3.connectionpool] https://a.blazemeter.com:443 "POST /api/v4/sessions/r-ext-5a8e2dc36d598/terminate-external HTTP/1.1" 200 1868
+[2018-02-22 02:41:58,322 DEBUG User] Response [200]: {
+    "api_version": 4,
+    "error": null,
+    "result": {
+        "success": true,
+        "session": {
+            "id": "r-ext-5a8e2dc36d598",
+            "name": "external",
+            "userId": 386483,
+            "publicToken": "Vf9DfM0Go80jhA3wDSBN
+[2018-02-22 02:41:58,322 INFO Engine.blazemeter] Online report link: https://a.blazemeter.com/app/?public-token=Vf9DfM0Go80jhA3wDSBNUDa18C5oreoul8ljNq7Yh2PmXMb3z0#reports/r-ext-5a8e2dc36d598/summary
+[2018-02-22 02:41:58,323 INFO Engine.final-stats] Test duration: 0:00:49
+[2018-02-22 02:41:58,323 INFO Engine.final-stats] Samples count: 74, 0.00% failures
+[2018-02-22 02:41:58,326 INFO Engine.final-stats] Average times: total 0.008, latency 0.007, connect 0.000
+[2018-02-22 02:41:58,327 INFO Engine.final-stats] Percentile 0.0%: 0.001
+[2018-02-22 02:41:58,330 INFO Engine.final-stats] Percentile 50.0%: 0.003
+[2018-02-22 02:41:58,330 INFO Engine.final-stats] Percentile 90.0%: 0.009
+[2018-02-22 02:41:58,332 INFO Engine.final-stats] Percentile 95.0%: 0.026
+[2018-02-22 02:41:58,332 INFO Engine.final-stats] Percentile 99.0%: 0.180
+[2018-02-22 02:41:58,333 INFO Engine.final-stats] Percentile 99.9%: 0.180
+[2018-02-22 02:41:58,334 INFO Engine.final-stats] Percentile 100.0%: 0.180
+[2018-02-22 02:41:58,334 INFO Engine.final-stats] Dumping final status as CSV: final-stats.csv
+[2018-02-22 02:41:58,341 DEBUG Engine] New artifact filename: /tmp/artifacts/xunit.xml
+[2018-02-22 02:41:58,342 INFO Engine.XUnitFileWriter] Writing JUnit XML report into: /tmp/artifacts/xunit.xml
+[2018-02-22 02:41:58,347 DEBUG Engine.Configuration] Dumping YAML config into /tmp/artifacts/effective.yml
+[2018-02-22 02:41:58,379 DEBUG Engine.Configuration] Dumping JSON config into /tmp/artifacts/effective.json
+[2018-02-22 02:41:58,381 INFO root] Artifacts dir: /tmp/artifacts
+[2018-02-22 02:41:58,381 INFO root] Done performing with code: 0
+[2018-02-22 02:41:58,381 DEBUG root] Closing log handler: /tmp/artifacts/bzt.log

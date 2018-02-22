@@ -1,0 +1,5 @@
+Created the tree successfully using /bzt-configs/modified_testit.jmx
+Starting the test @ Thu Feb 22 02:41:10 UTC 2018 (1519267270583)
+Waiting for possible Shutdown/StopTestNow/Heapdump message on port 4445
+Tidying up ...    @ Thu Feb 22 02:41:56 UTC 2018 (1519267316368)
+... end of run
