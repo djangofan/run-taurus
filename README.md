@@ -6,7 +6,8 @@ Other inspiration here:  (https://gettaurus.org/docs/JMeter/)
 
 ## Dependencies
 
-Tests require Apache server setup locally: (https://medium.com/@JohnFoderaro/how-to-set-up-apache-in-macos-sierra-10-12-bca5a5dfffba)
+The sample tests that are included here require that you setup Apache server locally: 
+    (https://medium.com/@JohnFoderaro/how-to-set-up-apache-in-macos-sierra-10-12-bca5a5dfffba)
 
 ## X DISPLAY Setup
 
