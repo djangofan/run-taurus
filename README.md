@@ -6,6 +6,9 @@ Other inspiration here:  (https://gettaurus.org/docs/JMeter/)
 
 ## Dependencies
 
+Taurus requires you install Docker and then optionally Docker Toolbox in order to run the sample
+  tests included in this project.
+
 The sample tests that are included here require that you setup Apache server locally: 
     (https://medium.com/@JohnFoderaro/how-to-set-up-apache-in-macos-sierra-10-12-bca5a5dfffba)
 
