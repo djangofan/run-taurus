@@ -31,3 +31,5 @@ On Windows, you could probably achieve the same thing using XMing X11 display, b
 This is what Taurus looks like when it is running.
 
 ![Screenshot](taurus_running.png)
+
+After running the tests, you'll find other artifacts on your local machine at `./artifacts/` .
