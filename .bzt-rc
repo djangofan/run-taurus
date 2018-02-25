@@ -70,3 +70,7 @@
 #  gatling:
 #    properties:
 #      gatling.data.file.bufferSize: 256 # output buffer size, 256 bytes by default
+
+
+
+
