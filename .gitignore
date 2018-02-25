@@ -1,2 +1,3 @@
 artifacts*
 *.csv
+.DS_Store
