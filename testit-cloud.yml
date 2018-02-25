@@ -36,5 +36,5 @@ modules:
 #     delete-test-files: true
 #     token: id:token
 #     workspace: My Workspace
-#     account: 00000000
+#     account: 000000
 #     project: Taurus Tests
