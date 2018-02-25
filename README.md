@@ -73,3 +73,11 @@ After running the tests, you'll find other artifacts on your local machine at `.
 02:38:17 INFO: Artifacts dir: /tmp/artifacts
 02:38:17 INFO: Done performing with code: 0
 ```
+
+
+# Tips
+
+Run Jmeter like this:  ./jmeter.sh > /dev/null 2>&1 & disown
+
+If tests fail with exception, try deleting your Taurus docker image and re-download it, to get the latest image.
+

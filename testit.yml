@@ -1,12 +1,12 @@
 ---
 scenarios:
-  testit-jmx:
+  testit:
     script: testit.jmx
 
 execution:
-- scenario: testit-jmx
+- scenario: testit
   concurrency: 20
-  ramp-up: 30s
+  ramp-up: 5s
 
 reporting:  # https://github.com/Blazemeter/taurus/blob/master/site/dat/docs/Reporting.md
 - module: blazemeter
@@ -14,8 +14,3 @@ reporting:  # https://github.com/Blazemeter/taurus/blob/master/site/dat/docs/Rep
   dump-csv: testit-stats.csv
 - module: console
 - module: junit-xml
-
-modules:
-  jmeter:
-    gui: true
-    detect-plugins: true
