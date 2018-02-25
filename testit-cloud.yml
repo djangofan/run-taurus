@@ -1,0 +1,37 @@
+---
+provisioning: cloud
+
+scenarios:
+  testit-cloud:
+    script: testit-cloud.jmx
+
+execution:
+- scenario: testit-cloud
+  concurrency:
+    local: 20
+    cloud: 200
+  ramp-up: 30s
+  hold-for: 2m
+  throughput:
+    local: 100
+    cloud: 10000
+
+# only following config sections are passed into cloud: scenarios, execution, services
+
+modules:
+  cloud:
+    delete-test-files: true
+    test: testit-cloud
+    timeout: 10s  # BlazeMeter API client timeout
+    browser-open: end  # auto-open browser on test start/end/both/none
+    check-interval: 5s  # interval which Taurus uses to query test status from BlazeMeter
+    public-report: true  # make test report public, disabled by default
+    send-report-email: false  # send report email once test is finished, disabled by default
+
+# in my local .bzt-rc file, tokens are stored like this
+# modules:
+#   blazemeter:
+#     token: id:token
+#   cloud:
+#     delete-test-files: true
+#     token: id:token
