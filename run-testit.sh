@@ -14,6 +14,9 @@
 ip=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
 xhost + $ip
 
+time_stamp=$(date +%Y-%m-%d-%T)
+mv artifacts artifacts_${time_stamp}
+
 PWD=`pwd`
 
 docker run -it --rm -e DISPLAY=$ip:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v $PWD:/bzt-configs -v $PWD/artifacts:/tmp/artifacts blazemeter/taurus:latest testit.yml
