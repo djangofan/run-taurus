@@ -16,7 +16,7 @@ xhost + $ip
 
 PWD=`pwd`
 
-docker run -it --rm -e DISPLAY=$ip:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v $PWD:/bzt-configs -v $PWD/artifacts:/tmp/artifacts blazemeter/taurus testit.yml
+docker run -it --rm -e DISPLAY=$ip:0 -v /tmp/.X11-unix:/tmp/.X11-unix -v $PWD:/bzt-configs -v $PWD/artifacts:/tmp/artifacts blazemeter/taurus:latest testit.yml
 
 #docker run -it --rm -v $PWD:/bzt-configs -v $PWD/artifacts:/artifacts blazemeter/taurus testit.yml
 
