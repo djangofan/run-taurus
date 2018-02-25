@@ -12,6 +12,8 @@ Taurus requires you install Docker and then optionally Docker Toolbox in order t
 The sample tests that are included here require that you setup Apache server locally: 
     (https://medium.com/@JohnFoderaro/how-to-set-up-apache-in-macos-sierra-10-12-bca5a5dfffba)
 
+NOTE: If you want to use Blazemeter cloud provisioning, you need to expose your Apache server to the outside world using a port mapping on your router.
+
 ## X DISPLAY Setup
 
 If you correctly set your X11 display, and if enable jmeter GUI in .yml, then you will see 3 things open 
