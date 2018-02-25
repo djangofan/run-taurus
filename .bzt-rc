@@ -1,4 +1,5 @@
 # General Settings
+# this optional file goes in your home directory if you need it
 
 #settings:
 #  default-executor: jmeter  # if you prefer using other executor by default - change this option
